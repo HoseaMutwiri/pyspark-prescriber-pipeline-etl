@@ -4,7 +4,7 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Python](https://img.shields.io/badge/python-3.13-blue)
 ![Spark](https://img.shields.io/badge/spark-TBD-orange)
-![Status](https://img.shields.io/badge/status-active-success)
+
 
 > An end-to-end PySpark ETL pipeline that ingests US city reference data and Medicare Part D prescriber claims, transforms them, and publishes the results to Hive, PostgreSQL, local storage, and AWS S3.
 
