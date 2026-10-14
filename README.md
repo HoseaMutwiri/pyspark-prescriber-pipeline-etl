@@ -90,17 +90,17 @@ Each stage logs its progress, and the job validates row counts, sample records, 
 
 ## Tech Stack
 
-| Component        | Version | Purpose                                              |
-|------------------|---------|------------------------------------------------------|
-| Python           | 3.13    | Pipeline code (inferred from cached bytecode)        |
-| PySpark          | TBD     | Distributed ETL: ingestion, transformation, output   |
-| Apache Spark     | TBD     | Execution engine running on YARN                     |
-| Apache Hadoop    | TBD     | HDFS storage and YARN resource management            |
-| Apache Hive      | TBD     | Warehouse tables in the `prescpipeline` database     |
-| PostgreSQL       | TBD     | Relational persistence target via JDBC               |
-| PostgreSQL JDBC  | 42.7.7  | JDBC driver (`lib/postgresql-42.7.7.jar`)            |
-| AWS CLI          | TBD     | Uploading outputs to S3                              |
-| KornShell (ksh)  | TBD     | Orchestration and HDFS/S3 file operations            |
+| Component        | Purpose                                              |
+|------------------|------------------------------------------------------|
+| Python           | Pipeline code         |
+| PySpark          | Distributed ETL: ingestion, transformation, output   |
+| Apache Spark     | Execution engine running on YARN                     |
+| Apache Hadoop    | HDFS storage and YARN resource management            |
+| Apache Hive      | Warehouse tables in the `prescpipeline` database     |
+| PostgreSQL       | Relational persistence target via JDBC               |
+| PostgreSQL JDBC  | JDBC driver (`lib/postgresql-42.7.7.jar`)            |
+| AWS CLI          | Uploading outputs to S3                              |
+| KornShell (ksh)  | Orchestration and HDFS/S3 file operations            |
 
 ## Project Structure
 
@@ -151,18 +151,18 @@ prescriber_pipeline/
 
 ## Prerequisites
 
-| Software                   | Version | Notes                                                                 |
-|----------------------------|---------|-----------------------------------------------------------------------|
-| Linux (RHEL/Ubuntu class)  | Any     | Scripts use ksh and Linux paths. Windows users should work via SSH.   |
-| Python                     | 3.13    | Matches the bytecode cache in `bin/__pycache__/`.                     |
-| Java (JDK)                 | TBD     | Required by Spark. Must match the cluster's Spark build.              |
-| Apache Spark               | TBD     | Must support `--master yarn`.                                         |
-| Hadoop (HDFS + YARN)       | TBD     | A reachable cluster with `hdfs` on the PATH of the executing user.    |
-| Apache Hive                | TBD     | Metastore reachable from Spark, with `prescpipeline` database access. |
-| PostgreSQL                 | TBD     | Reachable from the cluster. Credentials must have write access.       |
-| AWS CLI                    | TBD     | Configured with credentials that can write to the target bucket.      |
-| KornShell (`ksh`)          | TBD     | Required to run the `.ksh` orchestration scripts.                     |
-| Git                        | Any     | To clone the repository.                                              |
+| Software                   | Notes                                                                 |
+|----------------------------|-----------------------------------------------------------------------|
+| Linux                      | Scripts use ksh and Linux paths. Windows users should work via SSH.   |
+| Python                     | Matches the bytecode cache in `bin/__pycache__/`.                     |
+| Java (JDK)                 | Required by Spark. Must match the cluster's Spark build.              |
+| Apache Spark               | Must support `--master yarn`.                                         |
+| Hadoop (HDFS + YARN)       | A reachable cluster with `hdfs` on the PATH of the executing user.    |
+| Apache Hive                | Metastore reachable from Spark, with `prescpipeline` database access. |
+| PostgreSQL                 | Reachable from the cluster. Credentials must have write access.       |
+| AWS CLI                    | Configured with credentials that can write to the target bucket.      |
+| KornShell (`ksh`)          | Required to run the `.ksh` orchestration scripts.                     |
+| Git                        | To clone the repository.                                              |
 
 ## Installation / Setup
 
